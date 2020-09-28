@@ -1,0 +1,21 @@
+.Board {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	background-color: rgb(52, 129, 160);
+}
+
+.ListContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+.ListContainer > * {
+	align-self: flex-start;
+}
