@@ -1,13 +1,15 @@
 .container {
-	background: #d6e0f0;
+	background: #a6dcef;
 	width: 170px;
 	min-width: 150px;
 	border-radius: 1rem;
 	padding: 4px;
 	margin: 0;
+	height:max-content;
+
 }
 .heading {
-	border-bottom: 1.5px solid #8d93ab;
+	border-bottom: 1.5px solid #5096B3;
 	padding: 3px;
 }
 ul {
@@ -29,15 +31,16 @@ button {
 	width: 100%;
 	cursor: pointer;
 	font-size: 15px;
-	border: 2px solid #d6e0f0;
+	border: 1px solid #8CC6DD;
 	border-radius: 7px;
-	background-color: #ecf4f3;
+	background-color: #FAFCFD;
 	outline: none;
 	padding: 0.2rem 0.5rem;
 	height: 2em;
 }
 button:hover {
-	filter: brightness(105%);
+	filter: brightness(115%);
+	border: 2px solid #8CC6DD;
 }
 button:active {
 	transform: translate(0, 0.2rem);

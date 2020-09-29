@@ -1,21 +1,22 @@
 .Board {
-	width: 100vw;
+	min-height: 100vh;
+	padding: 3rem;
+	background-color: #5096B3;
+	flex-wrap: wrap;
+  }
+  
+  .boardItem {
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
-	overflow-x: scroll;
-	background-color: rgb(52, 129, 160);
+	gap: 1rem;
+  }
+.addNewlist{
+	border-radius: 7px;
+	border: none;
+	outline: none;
+	text-align: center;
+	padding: 0;
+	margin: 0 0 2px 0;
+	width: 100%;
+	height: 2em;
 }
 
-.ListContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
-	overflow-x: scroll;
-}
-
-.ListContainer > * {
-	align-self: flex-start;
-}
