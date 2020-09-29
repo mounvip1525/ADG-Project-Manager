@@ -4,13 +4,13 @@
   }
   .cardItem {
     margin: 0;
-    background: #ecf4f3;
+    background: #fff;
     border-radius: 0.75rem;
     position: relative;
     padding: 5px;
     margin: 0.2em;
-    height: auto;
     max-height: 50px;
+    
   }
   .spanClass {
     position: absolute;

@@ -18,9 +18,9 @@ const Board = (props) => {
 		});
 		setInputText("");
 	}
-
 	return (
 		<div className={classes.Board}>
+			<div className={classes.boardItem}>
 			{lists.map((listItem, index) => (
 				<List
 					ListName={listItem}
@@ -29,10 +29,11 @@ const Board = (props) => {
 				></List>
 			))}
 			<div>
-				<input type="text" onChange={inputValue} />
+				<input type="text" onChange={inputValue} placeholder="Add new List" className={classes.addNewlist}/>
 				<button onClick={addList}>
 					<span>+</span>
 				</button>
+			</div>
 			</div>
 		</div>
 	);
