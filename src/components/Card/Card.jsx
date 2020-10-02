@@ -11,7 +11,7 @@ function Card(props) {
           <span className={classes.spanClass}>
             <FontAwesomeIcon
               onClick={() => {
-                props.onDelete(props.id);
+                props.onDeleteCard(props.id);
               }}
               className={classes.faicons}
               icon="trash"

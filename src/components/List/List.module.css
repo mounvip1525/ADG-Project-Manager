@@ -46,3 +46,15 @@ button:active {
 	transform: translate(0, 0.2rem);
 	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.5);
 }
+header{
+	display:flex;
+	justify-content:space-between;
+}
+.spanClass {
+    font-size: 0.75em;
+	color: #8d93ab;
+	margin-right:5px;
+  }
+  .faicons:hover {
+    color: #393b44;
+  }

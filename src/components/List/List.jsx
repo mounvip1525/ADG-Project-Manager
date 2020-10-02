@@ -1,26 +1,27 @@
 import React from "react";
 import { useState } from "react";
 import Card from "../Card/Card.jsx";
+import Header from "./Header.jsx";
 import classes from "./List.module.css";
 
 function List(props) {
 	const [inputText, setInputText] = useState("");
-	const [items, setItems] = useState([]);
+	const [cards, setCards] = useState([]);
 
 	function inputValue(event) {
 		const newItem = event.target.value;
 		setInputText(newItem);
 	}
 
-	function addItem() {
-		setItems((prevItems) => {
-			return [...prevItems, inputText];
+	function addCard() {
+		setCards((prevCards) => {
+			return [...prevCards, inputText];
 		});
 		setInputText("");
 	}
-	function deleteItem(id) {
-		setItems((prevItems) => {
-			return prevItems.filter((item, index) => {
+	function deleteCard(id) {
+		setCards((prevCards) => {
+			return prevCards.filter((item, index) => {
 				return index !== id;
 			});
 		});
@@ -28,19 +29,20 @@ function List(props) {
 
 	return (
 		<div className={classes.container}>
-			<div className={classes.heading}>
-				<header>{props.ListName}</header>
-			</div>
-
+				<Header
+				text={props.ListName}
+				deleteList={props.onDeleteList}
+				id={props.id}
+				></Header>
 			<div className='form'>
 				<ul>
-					<div className={classes.ListContainer}>
-						{items.map((cardItem, index) => (
+					<div>
+						{cards.map((cardItem, index) => (
 							<Card
 								text={cardItem}
 								key={index}
 								id={index}
-								onDelete={deleteItem}
+								onDeleteCard={deleteCard}
 							></Card>
 						))}
 					</div>
@@ -52,7 +54,7 @@ function List(props) {
 					value={inputText}
 					placeholder='Add new Card'
 				></input>
-				<button onClick={addItem}>
+				<button onClick={addCard}>
 					<span>+</span>
 				</button>
 			</div>
