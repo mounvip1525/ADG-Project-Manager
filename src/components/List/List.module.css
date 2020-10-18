@@ -1,60 +1,64 @@
 .container {
-	background: #a6dcef;
-	width: 170px;
-	min-width: 150px;
-	border-radius: 1rem;
-	padding: 4px;
-	margin: 0;
-	height:max-content;
-
+  background: #a6dcef;
+  width: 170px;
+  min-width: 150px;
+  border-radius: 1rem;
+  padding: 4px;
+  margin: 0;
+  height: max-content;
 }
 .heading {
-	border-bottom: 1.5px solid #5096B3;
-	padding: 3px;
+  border-bottom: 1.5px solid #5096b3;
+  padding: 3px;
 }
 ul {
-	padding-left: 0;
-	list-style-type: none;
+  padding-left: 0;
+  list-style-type: none;
 }
 .enterText {
-	border-radius: 7px;
-	border: none;
-	outline: none;
-	text-align: center;
-	padding: 0;
-	margin: 0 0 2px 0;
-	width: 100%;
-	height: 2em;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 2px 0;
+  width: 100%;
+  height: 2em;
 }
 button {
-	display: block;
-	width: 100%;
-	cursor: pointer;
-	font-size: 15px;
-	border: 1px solid #8CC6DD;
-	border-radius: 7px;
-	background-color: #FAFCFD;
-	outline: none;
-	padding: 0.2rem 0.5rem;
-	height: 2em;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid #8cc6dd;
+  border-radius: 7px;
+  background-color: #fafcfd;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  height: 2em;
 }
 button:hover {
-	filter: brightness(115%);
-	border: 2px solid #8CC6DD;
+  filter: brightness(115%);
+  border: 2px solid #8cc6dd;
 }
 button:active {
-	transform: translate(0, 0.2rem);
-	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.5);
+  transform: translate(0, 0.2rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.5);
 }
-header{
-	display:flex;
-	justify-content:space-between;
+header {
+  display: flex;
+  justify-content: space-between;
 }
 .spanClass {
-    font-size: 0.75em;
-	color: #8d93ab;
-	margin-right:5px;
-  }
-  .faicons:hover {
-    color: #393b44;
-  }
+  font-size: 0.75em;
+  color: #8d93ab;
+  margin-right: 5px;
+}
+.faicons:hover {
+  color: #393b44;
+  cursor: pointer;
+}
+.listHead {
+  display: flex !important;
+  justify-items: space-between !important;
+}
