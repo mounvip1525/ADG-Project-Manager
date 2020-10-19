@@ -12,9 +12,10 @@ const Board = (props) => {
 	}
 	function addList() {
 		setLists((prevItems) => {
-			return [...prevItems, inputText];
+			let title = inputText;
+			setInputText("");
+			return [...prevItems, title];
 		});
-		setInputText("");
 	}
 	function deleteList(id) {
 		setLists((prevLists) => {
@@ -35,7 +36,7 @@ const Board = (props) => {
 					></List>
 				))}
 				<div>
-					<input type="text" onChange={inputValue} placeholder="Add new List" className={classes.addNewlist} />
+					<input type="text" value={inputText} onChange={inputValue} placeholder="Add new List" className={classes.addNewlist} />
 					<button onClick={addList}>
 						<span>+</span>
 					</button>
