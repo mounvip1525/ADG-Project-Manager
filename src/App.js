@@ -5,7 +5,7 @@ import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Signup from "./components/Signup/Signup";
+import LoginApp from "./components/LoginApp/LoginApp";
 import Board from "./containers/Board/Board";
 library.add(faTrash);
 library.add(faEdit);
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path="/" component={Signup} exact />
+        <Route path="/" component={LoginApp} exact />
         <Route path="/Board" component={Board} />
       </Switch>
     </div>
