@@ -137,11 +137,11 @@ body,
 }
 
 .loginBtn {
-    padding: 10px 30px;
+    height: 2.1em;
+    padding: 3px;
     /* background: #6565e7; */
-    border: 0;
-    font-size: 18px;
-    border-radius: 3px;
+    font-size: 19px;
+    border-radius: 4px;
     font-family: "Oxygen", sans-serif;
     background-color: rgba(15, 15, 15, 0.03);
     margin-top: 30px;
