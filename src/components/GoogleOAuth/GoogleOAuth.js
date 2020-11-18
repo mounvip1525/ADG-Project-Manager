@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import LoginAppModule from '../LoginApp/LoginApp.module.css';
+import axios from 'axios';
 
 class GoogleOAuth extends React.Component {
     constructor(props) {
@@ -8,13 +9,31 @@ class GoogleOAuth extends React.Component {
         this.state = {};
     }
 
-    submitGoogleOAuth(e) {
+    signup (res) {
+        const googleresponse = {
+            Name: res.profileObj.name,
+            email: res.profileObj.email,
+            token: res.googleId,
+            Image: res.profileObj.imageUrl,
+            providerId: 'Google'
+        };
+        // debugger;
+        axios.post('http://adg-project-manager.herokuapp.com/api/user/google', googleresponse)
+            .then(result => {
+                sessionStorage.setItem("userData", JSON.stringify(result));
+                this.props.history.push('/Board');
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
 
-    }
-
-    responseGoogle = (res) => {
+    responseGoogle = (response) => {
+        console.log(response);
+        var res = response.profileObj;
         console.log(res);
-        console.log(res.profileObj);
+        // debugger;
+        this.signup(response);
     }
 
     render() {
