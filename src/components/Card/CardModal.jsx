@@ -88,6 +88,15 @@ export class CardModal extends Component {
                     </Button>
                   </span>
                 </div>
+                <div className={classes.check}>
+                  <input placeholder="Title" />
+
+                  <span>
+                    <Button variant="secondary" className={classes.checkBut}>
+                      Add
+                    </Button>
+                  </span>
+                </div>
               </div>
 
               <div className={classes.CardDiv}>
