@@ -25,23 +25,29 @@ const Board = (props) => {
 	}
 	return (
 		<div className={classes.Board}>
-			<div className={classes.boardItem}>
-				{lists.map((listItem, index) => (
-					<List
-						ListName={listItem}
-						key={index}
-						id={index}
-						onDeleteList={deleteList}
-					></List>
-				))}
-				<div>
-					<input type="text" onChange={inputValue} placeholder="Add new List" className={classes.addNewlist} />
-					<button onClick={addList}>
-						<span>+</span>
-					</button>
-				</div>
-			</div>
-		</div>
+			<div className={classes.text}>
+			  <input
+			    type="text"
+			    value={inputText}
+			    onChange={inputValue}
+			    placeholder="Add new List"
+			    className={classes.addNewlist}
+			  />
+		  <button onClick={addList}>
+		    <span>+</span>
+		  </button>
+        	</div>
+		<div className={classes.boardItem}>
+        {lists.map((listItem, index) => (
+          <List
+            ListName={listItem}
+            key={index}
+            id={index}
+            onDeleteList={deleteList}
+          ></List>
+        ))}
+      </div>
+    </div>
 	);
 }
 export default Board;
