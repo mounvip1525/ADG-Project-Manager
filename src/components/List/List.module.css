@@ -2,14 +2,15 @@
 	background: #a6dcef;
 	width: 170px;
 	min-width: 150px;
-	border-radius: 1rem;
-	padding: 4px;
+	border-radius: 1em;
+	padding: 0.5em 1em;
 	margin: 0;
-	height:max-content;
-
+	height: max-content;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
 }
 .heading {
-	border-bottom: 1.5px solid #5096B3;
+	border-bottom: 1.5px solid #5096b3;
 	padding: 3px;
 }
 ul {
@@ -31,30 +32,35 @@ button {
 	width: 100%;
 	cursor: pointer;
 	font-size: 15px;
-	border: 1px solid #8CC6DD;
+	border: 1px solid #8cc6dd;
 	border-radius: 7px;
-	background-color: #FAFCFD;
+	background-color: #fafcfd;
 	outline: none;
 	padding: 0.2rem 0.5rem;
 	height: 2em;
 }
 button:hover {
 	filter: brightness(115%);
-	border: 2px solid #8CC6DD;
+	border: 2px solid #8cc6dd;
 }
 button:active {
 	transform: translate(0, 0.2rem);
 	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.5);
 }
-header{
-	display:flex;
-	justify-content:space-between;
+header {
+	display: flex;
+	justify-content: space-between;
 }
 .spanClass {
-    font-size: 0.75em;
+	font-size: 0.75em;
 	color: #8d93ab;
-	margin-right:5px;
-  }
-  .faicons:hover {
-    color: #393b44;
-  }
+	margin-right: 5px;
+}
+.faicons:hover {
+	color: #393b44;
+	cursor: pointer;
+}
+.listHead {
+	display: flex !important;
+	justify-items: space-between !important;
+}
