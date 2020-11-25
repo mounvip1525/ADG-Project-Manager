@@ -50,4 +50,3 @@ export default class Card extends Component {
     );
   }
 }
-console.log('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
