@@ -44,9 +44,9 @@ class LoginApp extends React.Component {
                 </div>
                 <div className={ LoginAppModule.boxContainer}>
                     {this.state.isLoginActive && <Login />}
-                    {this.state.isLoginActive && <GoogleLogin />}
+                    {/* {this.state.isLoginActive && <GoogleLogin />} */}
                     {this.state.isSignupActive && <Signup />}
-                    {this.state.isSignupActive && <GoogleLogin />}
+                    {/* {this.state.isSignupActive && <GoogleLogin />} */}
                 </div>
             </div>
 
