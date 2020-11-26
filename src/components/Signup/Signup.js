@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import LoginAppModule from '../LoginApp/LoginApp.module.css';
 
@@ -10,11 +10,13 @@ const Signup = () => {
     const [password2, setPassword2] = useState('');
     const [user, setUser] = useState('');
 
+    const history = useHistory();
+
     const handleSubmit = function() {
-        // console.log("Inside handleSubmit");
+        console.log("Inside handleSubmit");
         document.getElementById("signupForm").addEventListener("submit", async function (e) {
             e.preventDefault()
-            // console.log("Inside signupForm");
+            console.log("Inside signupForm");
             const user = {email, name, password, password2};
             const response = await fetch({
                 method: 'post',
@@ -24,8 +26,9 @@ const Signup = () => {
                 // },
                 data: user 
             });
-            // console.log(response);
-            // console.log(user);
+            console.log(response);
+            console.log(user);
+            history.push("/Board");
         })
     }
 
@@ -76,13 +79,13 @@ const Signup = () => {
                                onChange={ (e) => setPassword2(e.target.value) }
                         />
                     </div>
-                    <Link to={`/Board`}>
+                    {/* <Link to={`/Board`}> */}
                         <button type="submit"
                                 onClick={ handleSubmit } 
                                 className={ LoginAppModule.loginBtn }>
                                     Sign-Up!
                         </button>
-                    </Link>
+                    {/* </Link> */}
                 </form>
             </div>
         </div>
