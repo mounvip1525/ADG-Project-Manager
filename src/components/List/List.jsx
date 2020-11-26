@@ -13,8 +13,6 @@ function List(props) {
   function inputValue(event) {
     const newItem = event.target.value;
     setInputText(newItem);
-    console.log('hiiiiiiiiiiiiiiiiii')
-
   }
 
   function handleAddCard() {
@@ -66,4 +64,3 @@ function List(props) {
   );
 }
 export default List;
-
