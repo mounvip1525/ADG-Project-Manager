@@ -20,20 +20,26 @@
   flex-direction: column;
 }
 
+/* .avatar {
+} */
+
 .avatarImg {
   height: 120px;
   width: 120px;
   border-radius: 9999px;
-  background-color: #aaa;
+  background-color: #aaaaaa;
 }
 
 .userRecents {
   padding-top: 1em;
   border-top: 4px solid #276363;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .userRecents > ul > li {
-  padding: 0.5em;
+  padding: 0.45em;
   margin: 0.25em 0.5em;
   background-color: #819292;
 }
