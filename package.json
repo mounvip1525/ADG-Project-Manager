@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.2",
+    "css-module-class-lister": "^1.2.0",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-bootstrap": "^1.3.0",
