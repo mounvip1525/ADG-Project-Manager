@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,6 +11,7 @@ import Dashboard from "./containers/Dashboard/Dashboard";
 
 library.add(faTrash);
 library.add(faEdit);
+library.add(faPlus);
 
 function App() {
   return (

@@ -12,9 +12,8 @@
   flex-wrap: wrap;
 }
 .text{
-  left:0;
+  margin:3% 0%;
   width: fit-content;
-  margin-bottom:3%;
 }
 .addNewlist {
   border-radius: 7px;

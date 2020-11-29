@@ -5,6 +5,7 @@ import classes from "./Board.module.css";
 import { v4 as uuid } from "uuid";
 import { DragDropContext } from "react-beautiful-dnd";
 
+
 const Board = (props) => {
   const [inputText, setInputText] = useState("");
   const [lists, setLists] = useState([
