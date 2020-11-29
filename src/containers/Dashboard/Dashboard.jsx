@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Logout from "../Logout/Logout";
 import styles from "./Dashboard.module.css";
 
 const Dashboard = (props) => {
@@ -25,12 +26,13 @@ const Dashboard = (props) => {
             <div className={styles.userRecents}>
               <h4>Recent activities</h4>
               <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                <li>1. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui quidem laboriosam unde totam aspernatur accusamus itaque perferendis vitae, ipsum, sed nostrum mollitia laudantium illum facere, ab quibusdam ad distinctio.</li>
+                <li>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad tenetur, ab atque asperiores, excepturi nemo assumenda, inventore commodi soluta facilis repellendus ullam ipsa obcaecati repellat unde ipsam! Praesentium, reprehenderit officiis?</li>
+                <li>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit distinctio eligendi facere laudantium provident temporibus enim ducimus. Ad vel enim eius eum, temporibus at, veniam quibusdam molestiae, non nemo odit.</li>
               </ul>
             </div>
           </div>
+          <Logout />
         </div>
         <div className={styles.boardMenu}>
           <h1>board menu</h1>
