@@ -1,0 +1,18 @@
+.logout {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoutBtn {
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    background: #819292;
+    transition: all 250ms ease-in-out;
+}
+
+.logoutBtn:hover {
+    transform: scale(1.1);
+}
