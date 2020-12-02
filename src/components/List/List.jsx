@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
 import { Droppable } from "react-beautiful-dnd";
 import Card from "../Card/Card.jsx";
 import Header from "./Header.jsx";

@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './Icons.module.css';
 
-
 export const NotificationIcon = (props) => {
 	return (
 		<div className={classes.IconContainer}>

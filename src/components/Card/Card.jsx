@@ -43,7 +43,7 @@ export default class Card extends Component {
               </div>
             </div>
 
-            <CardModal show={this.state.cModalShow} onHide={cModalClose} />
+            <CardModal show={this.state.cModalShow} onHide={cModalClose} text={this.props.text}/>
           </div>
         )}
       </Draggable>
