@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import LoginAppModule from '../LoginApp/LoginApp.module.css';
 
 const Signup = () => {
@@ -13,27 +13,37 @@ const Signup = () => {
     const history = useHistory();
 
     const handleSubmit = function() {
-        console.log("Inside handleSubmit");
+        // console.log("Inside handleSubmit");
         document.getElementById("signupForm").addEventListener("submit", async function (e) {
             e.preventDefault()
-            console.log("Inside signupForm");
-            const user = {email, name, password, password2};
-            const response = await fetch({
-                method: 'post',
-                url: 'https://adg-project-manager.herokuapp.com/user/signup',
-                // headers: {
-                //     "Content-Type": "application/json",
-                // },
-                data: user 
-            });
-            console.log(response);
-            console.log(user);
-            history.push("/Board");
+            // console.log("Inside signupForm");
+            const user = {email, password, password2, name};
+            await fetch('https://adg-project-manager.herokuapp.com/api/user/signup', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                body: JSON.stringify(user)
+            })
+            .then(function (response) {
+                // console.log(response);
+                // console.log(response.message);
+                // console.log(response.token);
+                if(response.status == 200)
+                    return response.json();
+                else
+                    throw Error(response.statusText);
+            }).then(data => {
+                // console.log(data);
+                // console.log(data.token);
+                sessionStorage.setItem("token", data.token);
+                history.push("/Board");
+            }).catch(error => console.log(error))
         })
     }
 
     return(
-        <div className= { LoginAppModule.innerContainer }>
+        <div className={ LoginAppModule.innerContainer }>
             <div className={ LoginAppModule.header }>
                 Signup
             </div>
