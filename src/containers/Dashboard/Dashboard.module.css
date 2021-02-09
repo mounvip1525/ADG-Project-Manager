@@ -41,12 +41,12 @@
 .userRecents > ul > li {
   padding: 0.45em;
   margin: 0.25em 0.5em;
-  background-color: #819292;
+  background-color: #ccf3f3;
 }
 
 .boardCollection {
   padding: 1em;
-  background-color: darkseagreen;
+  /* background-color: darkseagreen; */
   color: white;
 }
 
