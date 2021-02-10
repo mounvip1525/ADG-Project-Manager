@@ -24,6 +24,10 @@
   margin: 0 0 2px 0;
   height: 2em;
 }
+.addButton:active,
+.addButton:focus{
+  outline:none;
+}
 @media screen and (max-width:400px){
   .boardItem{
     display:flex;

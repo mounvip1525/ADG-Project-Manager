@@ -45,6 +45,10 @@ button:hover {
 button:active {
 	transform: translate(0, 0.2rem);
 	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.5);
+	outline:none;
+}
+button:focus{
+	outline:none;
 }
 header {
 	display: flex;
