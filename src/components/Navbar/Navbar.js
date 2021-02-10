@@ -4,30 +4,28 @@ import classes from './Navbar.module.css';
 import { HomeIcon, BoardIcon, NotificationIcon, UserIcon, InfoIcon, ADGIconColored } from '../UI/Icons/Icons';
 
 
-const navbar = (props) => {
+const Navbar = (props) => {
 	return (
-		<nav className={classes.Nav} >
-
-			<div className={classes.Navleft}>
-				<HomeIcon />
-				<BoardIcon />
-			</div>
-
-			<div className={classes.NavCenter}>
-				<ADGIconColored />
-				<div>
-					ADG Project Manager
+			<nav className={classes.Nav} >
+				<div className={classes.Navleft}>
+					<HomeIcon />
+					<BoardIcon />
 				</div>
-			</div>
 
-			<div className={classes.Navright}>
-				<NotificationIcon />
-				<InfoIcon />
-				<UserIcon />
-			</div>
+				<div className={classes.NavCenter}>
+					<ADGIconColored />
+					<div>
+						ADG Project Manager
+					</div>
+				</div>
 
-		</nav>
+				<div className={classes.Navright}>
+					<NotificationIcon />
+					<InfoIcon />
+					<UserIcon />
+				</div>
+			</nav>
 	)
 }
 
-export default navbar;
+export default Navbar;

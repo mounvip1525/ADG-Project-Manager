@@ -1,8 +1,9 @@
 .Nav {
+  position:fixed;
   color: rgba(255, 255, 255, 0.8);
   background-color: #8cc6dd;
   /* min-width: max-content; */
-  max-width: 100vw;
+  width: 100vw;
   height: 40px;
   display: flex;
   flex-direction: row;

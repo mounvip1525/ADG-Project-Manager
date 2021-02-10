@@ -1,5 +1,5 @@
 .Mod {
-  background-color: #eaeaea;
+  background-color: #eef5f8;
   /* min-height: 40vw; */
 }
 
@@ -14,7 +14,7 @@
 } */
 
 .modal-header {
-  borderbottom: "1px solid #b9b9b9";
+  border-bottom: "1px solid #b9b9b9";
 }
 h6 {
   color: rgb(54, 54, 54);
@@ -88,7 +88,6 @@ input {
   border: 1px solid rgb(185, 185, 185);
   overflow: hidden;
   overflow-wrap: break-word;
-  resize: ;
 }
 
 .descInp input:focus {
@@ -96,7 +95,7 @@ input {
 }
 
 .descInp input {
-  width: 70%;
+  width: 100%;
   height: 100px;
   padding: 20px 15px 80px;
 }
@@ -106,7 +105,7 @@ input {
 }
 
 .actInp input {
-  width: 70%;
+  width: 100%;
   height: 40px;
   padding: 0px 15px;
 }
@@ -117,12 +116,19 @@ input {
 
 .check input {
   height: 35px;
-  width: 35%;
+  width: 90%;
   padding: 0px 15px;
 }
 
 .check {
   display: flex;
+  background: #fff;
+  border-radius: 0.75rem;
+  position:relative;
+  padding: 5px;
+  margin: 0.2em;
+  min-width:260px;
+  width:270px;
 }
 
 .checkBut:active {
@@ -138,4 +144,47 @@ input {
 
 .checkItems {
   margin-bottom: 10px;
+}
+.checklist{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 0;
+  background: #fff;
+  border-radius: 0.75rem;
+  position:relative;
+  padding: 3px;
+  margin: 0.2em;
+  min-width:270px;
+  width:max-content;
+}
+.checklist input{
+  height:20px;
+  width:20px;
+  margin-right:3px;
+}
+.checkbox{
+  display:flex;
+  justify-content: flex-start;
+  padding:5px;
+  width:90%;
+  border:1px solid #B9B9B9;
+  border-radius: 5px;
+}
+.crossIcon{
+  font-size:15px;
+  transition: all 1s ease-out 0s;
+  margin:auto;
+}
+.crossIcon:hover{
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out 0s;
+}
+.modal{
+  width:50vw;
+}
+.addIcon{
+  font-size: 25px;
+  margin:auto;
 }

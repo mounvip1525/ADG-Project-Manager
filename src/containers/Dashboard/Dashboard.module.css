@@ -1,0 +1,68 @@
+.container {
+  margin: 2rem 6rem;
+  padding: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1.5em;
+}
+
+.userMenu {
+  background-color: lightcyan;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+/* .avatar {
+} */
+
+.avatarImg {
+  height: 120px;
+  width: 120px;
+  border-radius: 9999px;
+  background-color: #aaaaaa;
+}
+
+.userRecents {
+  padding-top: 1em;
+  border-top: 4px solid #276363;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.userRecents > ul > li {
+  padding: 0.45em;
+  margin: 0.25em 0.5em;
+  background-color: #ccf3f3;
+}
+
+.boardCollection {
+  padding: 1em;
+  /* background-color: darkseagreen; */
+  color: white;
+}
+
+.boardContainer {
+  display: flex;
+  max-width: 100%;
+  flex-flow: row wrap;
+}
+
+.boardAvatar {
+  margin: 1em;
+  height: 8rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  border-radius: 8px;
+}

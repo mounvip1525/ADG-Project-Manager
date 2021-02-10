@@ -4,34 +4,50 @@ import classes from "./CardModal.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faPlusSquare, faTimes } from "@fortawesome/free-solid-svg-icons";
 import CheckList from "./CheckList";
 
-function CardModal1() {
-  const [inputText, setInputText] = useState("");
-  const [CheckLists, setCheckLists] = useState([]);
-
-  function inputValue(event) {
-    const newItem = event.target.value;
-    setInputText(newItem);
-  }
-
-  function addCheckList() {
-    setCheckLists((prevCheckLists) => {
-      return [...prevCheckLists, inputText];
-    });
-    setInputText("");
-  }
-  function deleteCheckList(id) {
-    setCheckLists((prevCheckLists) => {
-      return prevCheckLists.filter((item, index) => {
-        return index !== id;
-      });
-    });
-  }
-}
-
 export class CardModal extends Component {
+  constructor(props) {
+    super(props);
+    this.inputValue=this.inputValue.bind(this);
+    this.addChecklist = this.addChecklist.bind(this);
+    this.deleteChecklist = this.deleteChecklist.bind(this);
+    this.state={
+      inputText:"",
+      checkLists:[]
+    };
+  }
+  inputValue(e){
+    const newItem=e.target.value;
+    this.setState(()=>{
+      return{
+        inputText:newItem
+      }
+    }
+    )
+  }
+  addChecklist(e) {
+    this.setState(prevChecklists=>{
+      return {
+        checkLists:prevChecklists.checkLists.concat(this.state.inputText)
+      }
+    })
+    this.setState(prevItems=>{
+      return{
+        inputText:""
+      }
+    })
+  }
+  deleteChecklist(id){
+    var filteredItems=this.state.checkLists.filter((checklist,index)=>{
+      return index !== id;
+  });
+  this.setState({
+    checkLists: filteredItems
+  });
+
+ }
   render() {
     return (
       <div className={classes.ModContent}>
@@ -40,11 +56,12 @@ export class CardModal extends Component {
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
+          dialogClassName={classes.modal}
         >
           <div className={classes.Mod}>
             <Modal.Header style={{ borderBottom: "1px solid #b9b9b9" }}>
               <Modal.Title id="contained-modal-title-vcenter">
-                <h3>Card</h3>
+                <h3>{this.props.text}</h3>
               </Modal.Title>
               <span>
                 <FontAwesomeIcon
@@ -68,34 +85,27 @@ export class CardModal extends Component {
                 </div>
               </div>
               <div className={classes.CardDiv}>
-                <h6>CHECKLIST</h6>
-                <div className={classes.checkItems}>
-                  {/* {CheckLists.map((checkItem, index) => ( */}
-                  <CheckList
-                  // text={checkItem}
-                  // key={index}
-                  // id={index}
-                  // onDeleteCard={deleteCheckList}
+                <h6>CHECKLISTS</h6>
+                <div className={classes.check}>
+                  <input type="text" 
+                  value={this.state.inputText} 
+                  placeholder="Title" 
+                  onChange={this.inputValue}
                   />
-                  {/* ))} */}
+                    <FontAwesomeIcon 
+                    className={classes.addIcon}  
+                    onClick={this.addChecklist}
+                    icon={faPlusSquare} />
                 </div>
-                <div className={classes.check}>
-                  <input placeholder="Title" />
-
-                  <span>
-                    <Button variant="secondary" className={classes.checkBut}>
-                      Add
-                    </Button>
-                  </span>
-                </div>
-                <div className={classes.check}>
-                  <input placeholder="Title" />
-
-                  <span>
-                    <Button variant="secondary" className={classes.checkBut}>
-                      Add
-                    </Button>
-                  </span>
+                <div className={classes.checkItems}>
+                   {this.state.checkLists.map((checkItem, index) => ( 
+                  <CheckList
+                  text={checkItem}
+                  key={index}
+                  id={index}
+                  onDeleteChecklist={this.deleteChecklist}
+                  />
+                   ))}
                 </div>
               </div>
 
