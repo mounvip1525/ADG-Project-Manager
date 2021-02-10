@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleLogin from '../GoogleOAuth/GoogleOAuth';
 import LoginAppModule from './LoginApp.module.css';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
