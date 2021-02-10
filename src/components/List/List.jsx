@@ -14,8 +14,10 @@ function List(props) {
   }
 
   function handleAddCard() {
-    props.addCard(inputText, props.id);
-    setInputText("");
+    if(inputText){
+      props.addCard(inputText, props.id);
+      setInputText("");
+    }
   }
 
   return (

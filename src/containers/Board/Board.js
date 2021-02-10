@@ -39,11 +39,13 @@ const Board = (props) => {
     setInputText(newItem);
   }
   function addList() {
-    setLists((prevItems) => {
-      let title = inputText;
-      setInputText("");
-      return [...prevItems, { title: title, id: uuid(), cards: [] }];
-    });
+    if(inputText){
+      setLists((prevItems) => {
+        let title = inputText;
+        setInputText("");
+        return [...prevItems, { title: title, id: uuid(), cards: [] }];
+      });
+    }
   }
 
   function addCard(inputText, listId) {
@@ -74,7 +76,7 @@ const Board = (props) => {
   }
 
   function reorderArray(array, fromIndex, toIndex) {
-    console.log("This function is called");
+    // console.log("This function is called");
     let newArray = array;
     const element = newArray.splice(fromIndex, 1);
     console.log(element);
@@ -83,8 +85,8 @@ const Board = (props) => {
   }
 
   function handleDragEnd(result) {
-    console.log(result);
-    const { destination, source, draggableId } = result;
+    // console.log(result);
+    const { destination, source } = result;
 
     if (!destination) {
       return;
@@ -110,7 +112,7 @@ const Board = (props) => {
             }
           : list
       );
-      console.log(newLists);
+      // console.log(newLists);
     } else {
       let card;
       newLists_beta = lists.map((list) => {
@@ -142,7 +144,7 @@ const Board = (props) => {
             placeholder="Add new List"
             className={classes.addNewlist}
           />
-          <button onClick={addList}>
+          <button onClick={addList} className={classes.addButton}>
             <span>+</span>
           </button>
         </div>
