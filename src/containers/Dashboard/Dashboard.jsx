@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import Logout from "../Logout/Logout";
 import styles from "./Dashboard.module.css";
 
@@ -9,6 +10,40 @@ const Dashboard = (props) => {
 
   // Verify User
   // FETCH ALL BOARDS
+
+  const[add, show] = useState(false); 
+
+  function showAddBoardForm() {
+    show(add => !add);
+  }
+
+  function addBoard(e) {
+    e.preventDefault();
+    const name= document.getElementById("name").value;
+    const desc= document.getElementById("desc").value;
+
+    const data = JSON.stringify({
+      boardName: name,
+      boardDesc: desc
+    })
+
+    var config = {
+      method: "post",
+      url: "/api/board/create",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${sessionStorage.getItem('token')}`
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((response) => {})
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+
+  }
 
   return (
     <div className={styles.container}>
@@ -37,8 +72,18 @@ const Dashboard = (props) => {
         <div className={styles.boardMenu}>
           <h1>board menu</h1>
           <div className={styles.boardCollection}>
+            <div className="addBoard" onClick={showAddBoardForm}>
+              <h3 className={styles.boardAvatar}>add board</h3>
+            </div>
+            {add ? (
+                <form>
+                Board Name: <input id="name" name="board" type="text"></input>
+                Board description: <input id="desc" name="desc" type="text"></input>
+                <button onClick={addBoard}>add</button>
+              </form>
+               ) : null}
             <div className={styles.recentBoards}>
-              <h3>Recent Boards</h3>
+              Recent Boards
               <div className={styles.boardContainer}>
                 <div className={styles.boardAvatar}>recent 1</div>
                 <div className={styles.boardAvatar}>recent 2</div>
