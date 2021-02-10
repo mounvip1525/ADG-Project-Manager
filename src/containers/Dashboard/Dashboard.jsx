@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Logout from "../Logout/Logout";
 import styles from "./Dashboard.module.css";
@@ -42,8 +43,14 @@ const Dashboard = (props) => {
       .catch((error) => {
         console.log(error.response.data.message);
       });
-
   }
+
+  const isLoggedIn = sessionStorage.getItem("token");
+    if(!isLoggedIn) {
+        return(
+            <Redirect to="/" />
+        )
+    }
 
   return (
     <div className={styles.container}>
