@@ -6,7 +6,7 @@ const Logout = () => {
     const history = useHistory();
 
     const handleSubmit = function() {
-        window.localStorage.clear();
+        sessionStorage.clear();
         history.push("/");
     }
 
