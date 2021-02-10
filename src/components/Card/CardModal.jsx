@@ -1,5 +1,5 @@
-import React, { Component, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { Component } from "react";
+import { Modal } from "react-bootstrap";
 import classes from "./CardModal.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
