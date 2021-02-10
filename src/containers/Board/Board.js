@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 import List from "../../components/List/List";
 import classes from "./Board.module.css";
 import { v4 as uuid } from "uuid";
@@ -133,6 +134,13 @@ const Board = (props) => {
 
     setLists(newLists);
   }
+
+  const isLoggedIn = sessionStorage.getItem("token");
+    if(!isLoggedIn) {
+        return(
+            <Redirect to="/" />
+        )
+    }
 
   return (
     <div className={classes.Board}>
