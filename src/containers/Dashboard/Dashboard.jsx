@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Logout from "../Logout/Logout";
 import styles from "./Dashboard.module.css";
@@ -13,6 +14,10 @@ const Dashboard = (props) => {
   // FETCH ALL BOARDS
 
   const[add, show] = useState(false); 
+
+  const[response,setResponse]=useState("");
+
+  let history = useHistory();
 
   function showAddBoardForm() {
     show(add => !add);
@@ -30,7 +35,7 @@ const Dashboard = (props) => {
 
     var config = {
       method: "post",
-      url: "/api/board/create",
+      url: "https://adg-project-manager.herokuapp.com/api/board/create",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${sessionStorage.getItem('token')}`
@@ -39,11 +44,22 @@ const Dashboard = (props) => {
     };
 
     axios(config)
-      .then((response) => {})
+      .then((response) => {
+        // console.log("response",response);
+        setResponse(response);
+      history.push({
+        pathname: '/board',
+        state: { data:response }
+      })
+      })
       .catch((error) => {
-        console.log(error.response.data.message);
+        console.log(error);
       });
+      // return(
+      //   <Redirect to= {{pathname:'/board',data:data}} />
+      // )
   }
+
 
   const isLoggedIn = sessionStorage.getItem("token");
     if(!isLoggedIn) {

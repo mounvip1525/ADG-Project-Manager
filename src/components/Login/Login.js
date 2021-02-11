@@ -29,7 +29,7 @@ const Login = () => {
                 // console.log(data);
                 // console.log("data", data.tokens[data.tokens.length - 1].token);
                 sessionStorage.setItem("token", data.tokens[data.tokens.length - 1].token);
-                history.push("/Board");
+                history.push("/dashboard");
             })
             .catch(error => {
                 alert("Invalid login credentials!", error);
