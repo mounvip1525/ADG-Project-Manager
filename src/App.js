@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash, faEdit, faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,12 +15,12 @@ library.add(faPlus);
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Navbar />
       <Switch>
-        <Route path='/' component={LoginApp} exact />
-        <Route path='/board' component={Board} />
-        <Route path='/dashboard' component={Dashboard} />
+        <Route path="/" component={LoginApp} exact />
+        <Route path="/board" component={Board} />
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </div>
   );

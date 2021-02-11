@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { Link, useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import React, {useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import LoginAppModule from '../LoginApp/LoginApp.module.css';
 
 const Signup = () => {
@@ -8,15 +7,12 @@ const Signup = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
-    const [user, setUser] = useState('');
-
+    
     const history = useHistory();
 
     const handleSubmit = function() {
-        // console.log("Inside handleSubmit");
         document.getElementById("signupForm").addEventListener("submit", async function (e) {
             e.preventDefault()
-            // console.log("Inside signupForm");
             const user = {email, password, password2, name};
             await fetch('https://adg-project-manager.herokuapp.com/api/user/signup', {
                 method: 'POST',
@@ -29,16 +25,20 @@ const Signup = () => {
                 // console.log(response);
                 // console.log(response.message);
                 // console.log(response.token);
-                if(response.status == 200)
+                if(response.status === 200)
                     return response.json();
                 else
                     throw Error(response.statusText);
-            }).then(data => {
+            })
+            .then(function (data) {
                 // console.log(data);
-                // console.log(data.token);
-                sessionStorage.setItem("token", data.token);
+                // console.log("data", data.tokens[data.tokens.length - 1].token);
+                sessionStorage.setItem("token", data.tokens[data.tokens.length - 1].token);
                 history.push("/Board");
-            }).catch(error => console.log(error))
+            })
+            .catch(error => {
+                alert("Invalid signup credentials!", error);
+            })
         })
     }
 
