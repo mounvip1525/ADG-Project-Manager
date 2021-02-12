@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Logout from "../Logout/Logout";
 import styles from "./Dashboard.module.css";
 
 const Dashboard = (props) => {
   // USER AS PROPS
-  // const [boards, setBoards] = useState;
-
   // Verify User
+
   // FETCH ALL BOARDS
+  // let [boards, setBoards] = useState([]);
+  // useEffect(() => {
+  //   getAllBoards();
+  // }, []);
+
+  // uncomment lines 146 if this works out
+  
+  // function getAllBoards() {
+  //   var config = {
+  //     method: "GET",
+  //     url: "https://adg-project-manager.herokuapp.com/api/board/allBoards",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${sessionStorage.getItem('token')}`
+  //     },
+  //   };
+  //   axios(config)
+  //     .then((response) => {
+  //       console.log("data",response.data.allBoards);
+  //       setBoards(response.data.allBoards);
+  //       console.log("first",boards)
+  //   })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //     // console.log("second",boards)
+  // }
 
   const[add, show] = useState(false); 
+
+  const[response,setResponse]=useState("");
 
   function showAddBoardForm() {
     show(add => !add);
@@ -30,7 +59,7 @@ const Dashboard = (props) => {
 
     var config = {
       method: "post",
-      url: "/api/board/create",
+      url: "https://adg-project-manager.herokuapp.com/api/board/create",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${sessionStorage.getItem('token')}`
@@ -39,11 +68,15 @@ const Dashboard = (props) => {
     };
 
     axios(config)
-      .then((response) => {})
+      .then((response) => {
+        console.log("response",response);
+        setResponse(response);
+      })
       .catch((error) => {
-        console.log(error.response.data.message);
+        console.log(error);
       });
   }
+
 
   const isLoggedIn = sessionStorage.getItem("token");
     if(!isLoggedIn) {
@@ -107,11 +140,14 @@ const Dashboard = (props) => {
             <div className={styles.allBoards}>
               <h3>All Boards</h3>
               <div className={styles.boardContainer}>
-                <div className={styles.boardAvatar}>All 1</div>
+                {/* <div className={styles.boardAvatar}>All 1</div>
                 <div className={styles.boardAvatar}>All 2</div>
                 <div className={styles.boardAvatar}>All 3</div>
                 <div className={styles.boardAvatar}>All 4</div>
-                <div className={styles.boardAvatar}>All 5</div>
+                <div className={styles.boardAvatar}>All 5</div> */}
+                {/* {boards.forEach(board=>{
+                  return <div className={styles.boardAvatar}>{board.boardName}</div>
+                })} */}
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 
 
 const Board = (props) => {
+  console.log("name",props.location.state.data);
   const [inputText, setInputText] = useState("");
   const [lists, setLists] = useState([
     // {
